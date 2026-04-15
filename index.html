@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harper Callahan — Romantic Mystery & Suspense</title>
+    <meta name="description" content="Harper Callahan writes atmospheric romantic mystery and suspense novels set along the North Carolina coast.">
+    <meta name="author" content="Harper Callahan">
+    <meta property="og:title" content="Harper Callahan Books">
+    <meta property="og:description" content="Atmospheric romantic mystery & suspense. The Carolina coast has secrets.">
+    <meta property="og:url" content="https://harpercallahanbooks.com/">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://harpercallahanbooks.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #ede8df;
+            --bg-warm: #e5ddd0;
+            --text: #2b2520;
+            --text-mid: #5c524a;
+            --text-light: #8a7e74;
+            --accent: #8b4513;
+            --accent-hover: #6d350f;
+            --rule: #c4b9ab;
+            --card-bg: #f5f1eb;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, Helvetica Neue, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.65;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'DM Serif Display', Georgia, Times, serif;
+            font-weight: 400;
+        }
+
+        a { color: var(--accent); }
+
+        /* ─── NAV ─── */
+        header {
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--rule);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 50;
+        }
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo span { font-style: italic; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-mid);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        .menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .menu-btn svg { width: 22px; height: 22px; stroke: var(--text); }
+
+        /* ─── HERO ─── */
+        .hero {
+            padding: 8rem 3rem 6rem;
+            max-width: 720px;
+        }
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        .hero-intro {
+            font-size: 1.1rem;
+            line-height: 1.75;
+            color: var(--text-mid);
+            max-width: 540px;
+            margin-bottom: 2.5rem;
+        }
+        .hero-link {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .hero-link:hover { color: var(--accent-hover); border-color: var(--accent-hover); }
+        .hero-link::after { content: ' \2192'; }
+
+        /* ─── RULE ─── */
+        .rule {
+            border: none;
+            height: 1px;
+            background: var(--rule);
+            margin: 0 3rem;
+        }
+
+        /* ─── AUTHOR PHOTO ─── */
+        .about-with-photo {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            max-width: 900px;
+            padding: 5rem 3rem;
+        }
+        .author-photo {
+            flex-shrink: 0;
+            width: 260px;
+        }
+        .author-photo img {
+            width: 100%;
+            display: block;
+            filter: saturate(0.9);
+        }
+        .author-photo figcaption {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+        .about-text-col .section-tag {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+        }
+        .about-text-col h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        .about-text-col p {
+            color: var(--text-mid);
+            margin-bottom: 1.2rem;
+            max-width: 560px;
+        }
+
+        /* ─── SECTION ─── */
+        .section {
+            padding: 5rem 3rem;
+            max-width: 720px;
+        }
+        .section-tag {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+        }
+        .section h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        .section p {
+            color: var(--text-mid);
+            margin-bottom: 1.2rem;
+            max-width: 560px;
+        }
+
+        /* ─── BOOK CARD ─── */
+        .book-card {
+            background: var(--card-bg);
+            border: 1px solid var(--rule);
+            padding: 2.5rem 2.5rem 2rem;
+            margin-top: 2rem;
+            max-width: 560px;
+        }
+        .book-card .series {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+        .book-card h3 {
+            font-size: 1.6rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .book-card p {
+            font-size: 0.92rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        .book-card .status {
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            border: 1px solid var(--rule);
+            padding: 0.4rem 1rem;
+        }
+
+        /* ─── PULLQUOTE ─── */
+        .pullquote {
+            padding: 4rem 3rem;
+            max-width: 640px;
+        }
+        .pullquote blockquote {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--text);
+        }
+        .pullquote cite {
+            display: block;
+            margin-top: 1rem;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-style: normal;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* ─── NEWSLETTER ─── */
+        .signup {
+            background: var(--bg-warm);
+            padding: 4rem 3rem;
+        }
+        .signup-inner {
+            max-width: 480px;
+        }
+        .signup h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .signup p {
+            font-size: 0.92rem;
+            color: var(--text-mid);
+            margin-bottom: 1.5rem;
+        }
+        .signup-form {
+            display: flex;
+            gap: 0;
+        }
+        .signup-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--rule);
+            border-right: none;
+            background: var(--bg);
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--text);
+            outline: none;
+        }
+        .signup-form input:focus { border-color: var(--accent); }
+        .signup-form input::placeholder { color: var(--text-light); }
+        .signup-form button {
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            border: 1px solid var(--accent);
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .signup-form button:hover { background: var(--accent-hover); }
+        .signup-note {
+            font-size: 0.72rem;
+            color: var(--text-light);
+            margin-top: 0.8rem;
+        }
+
+        /* ─── CONTACT ─── */
+        .contact {
+            padding: 4rem 3rem;
+            max-width: 720px;
+        }
+        .contact h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .contact p {
+            font-size: 0.92rem;
+            color: var(--text-mid);
+            margin-bottom: 1rem;
+        }
+        .contact a.email-link {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .contact a.email-link:hover { border-bottom-color: var(--accent); }
+
+        /* ─── FOOTER ─── */
+        footer {
+            padding: 2rem 3rem;
+            border-top: 1px solid var(--rule);
+        }
+        footer p {
+            font-size: 0.72rem;
+            color: var(--text-light);
+        }
+
+        /* ─── MOBILE ─── */
+        @media (max-width: 640px) {
+            header { padding: 1.2rem 1.5rem; }
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--rule);
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+            .menu-btn { display: block; }
+            .hero { padding: 5rem 1.5rem 4rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .about-with-photo {
+                flex-direction: column;
+                padding: 3rem 1.5rem;
+                gap: 2rem;
+            }
+            .author-photo { width: 200px; }
+            .section, .pullquote, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .signup { padding: 3rem 1.5rem; }
+            .rule { margin: 0 1.5rem; }
+            .book-card { padding: 1.8rem 1.5rem; }
+            .signup-form { flex-direction: column; gap: 0; }
+            .signup-form input { border-right: 1px solid var(--rule); }
+            footer { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">Harper <span>Callahan</span></a>
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+    </header>
+
+    <section class="hero">
+        <h1>Murder, magic,<br>and the <em>Carolina coast</em></h1>
+        <p class="hero-intro">Harper Callahan writes romantic mystery for readers who like their beach reads with a body count, a love interest who earns it, and a grandmother's secrets that won't stay buried.</p>
+        <a href="#books" class="hero-link">Read about the series</a>
+    </section>
+
+    <hr class="rule">
+
+    <section id="about" class="about-with-photo">
+        <figure class="author-photo">
+            <img src="harper-callahan.jpg" alt="Harper Callahan" width="260" height="347">
+            <figcaption>Photo by R. Hollis</figcaption>
+        </figure>
+        <div class="about-text-col">
+            <p class="section-tag">About</p>
+            <h2>Some towns keep secrets better than people do</h2>
+            <p>Harper Callahan is a former journalist who traded deadlines for fiction and never looked back. She writes atmospheric mystery set in small coastal towns where everyone knows your name, nobody tells the truth, and the old houses remember more than they should.</p>
+            <p>Her stories follow women who are sharp, complicated, and done pretending. Women who pour good coffee, ask the wrong questions, and inherit things they didn't ask for.</p>
+            <p>Harper lives on the East Coast with too many books and not enough shelf space.</p>
+        </div>
+    </section>
+
+    <div class="pullquote">
+        <blockquote>"The caf&eacute; hummed at odd hours. Not the pipes, not the wind. The building was just&hellip; awake."</blockquote>
+        <cite>From the series</cite>
+    </div>
+
+    <hr class="rule">
+
+    <section id="books" class="section">
+        <p class="section-tag">Books</p>
+        <h2>The Seabreeze Mysteries</h2>
+        <p>A six-book series of standalone murder mysteries connected by one woman, one town, and the slow unraveling of a coastal family's oldest secret.</p>
+
+        <div class="book-card">
+            <p class="series">Book One</p>
+            <h3>Coming 2026</h3>
+            <p>Nora Finch is forty-one, freshly divorced, and starting over in the North Carolina beach town she inherited a caf&eacute; she never wanted. Then a body turns up on the pier, and the local detective isn't interested in outside help.</p>
+            <p>Too bad Nora was an investigative journalist in another life. And too bad the dead man was last seen arguing in her caf&eacute;, in a booth that always runs cold.</p>
+            <span class="status">Pre-order coming soon</span>
+        </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="newsletter" class="signup">
+        <div class="signup-inner">
+            <h2>Get the early word</h2>
+            <p>Cover reveals, release dates, and occasional notes from the coast. Short emails, no spam, easy unsubscribe.</p>
+            <form class="signup-form" id="signupForm">
+                <input type="email" placeholder="Your email" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+            <p class="signup-note">Your email stays private. Always.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Say hello</h2>
+        <p>For press, collaboration, or if you just want to talk about books.</p>
+        <a href="mailto:harper@harpercallahanbooks.com" class="email-link">harper@harpercallahanbooks.com</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Harper Callahan</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+        var anchors = document.querySelectorAll('.nav-links a');
+        for (var i = 0; i < anchors.length; i++) {
+            anchors[i].addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        }
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var btn = this.querySelector('button');
+            var input = this.querySelector('input');
+            btn.textContent = 'Got it!';
+            input.value = '';
+            setTimeout(function() { btn.textContent = 'Subscribe'; }, 2500);
+        });
+    </script>
+
+</body>
+</html>
