@@ -191,6 +191,25 @@
         }
 
         /* ─── BOOK CARD ─── */
+        .book-card-featured {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            background: var(--card-bg);
+            border: 1px solid var(--rule);
+            padding: 2.5rem;
+            margin-top: 2rem;
+            max-width: 700px;
+        }
+        .book-cover {
+            flex-shrink: 0;
+            width: 200px;
+        }
+        .book-cover img {
+            width: 100%;
+            display: block;
+            box-shadow: 4px 6px 20px rgba(0,0,0,0.25);
+        }
         .book-card {
             background: var(--card-bg);
             border: 1px solid var(--rule);
@@ -363,6 +382,12 @@
                 gap: 2rem;
             }
             .author-photo { width: 200px; }
+            .book-card-featured {
+                flex-direction: column;
+                padding: 1.8rem 1.5rem;
+                gap: 1.5rem;
+            }
+            .book-cover { width: 160px; }
             .section, .pullquote, .contact { padding-left: 1.5rem; padding-right: 1.5rem; }
             .signup { padding: 3rem 1.5rem; }
             .rule { margin: 0 1.5rem; }
@@ -428,13 +453,17 @@
         <h2>The Lantern Bay Mysteries</h2>
         <p>Six standalone murder mysteries set on a barrier island off the North Carolina coast. One woman, one town, and the slow unraveling of a secret that's older than both.</p>
 
-        <div class="book-card">
-            <p class="series">Book One &mdash; A Nell Whitaker Novel</p>
-            <h3>The Tide Remembers</h3>
-            <p>Nine months into her new life on Heron Island, Nell Whitaker finds a body in the tidal pools behind her caf&eacute;. Avery Cole was twenty-nine, engaged, and the loudest voice against a resort development threatening the island's protected marsh. Everyone has a theory. Most of them are wrong.</p>
-            <p>Nell was an investigative journalist in another life &mdash; before a story in Washington got a source killed and she ran south to a building on the corner of Front and Pelican that she turned into the Compass Rose. She was trying to disappear. Lantern Bay had other plans.</p>
-            <p>What Avery was actually killed over was smaller, older, and closer to home than anyone wants to admit. And the old caf&eacute; on Front Street &mdash; with its cold spot on the landing and a portrait whose eyes follow Nell on certain evenings &mdash; seems to know it.</p>
-            <span class="status">Coming 2026</span>
+        <div class="book-card-featured">
+            <div class="book-cover">
+                <img src="the-tide-remembers-cover.jpg" alt="The Tide Remembers — Book Cover">
+            </div>
+            <div class="book-details">
+                <p class="series">Book One &mdash; A Nell Whitaker Novel</p>
+                <h3>The Tide Remembers</h3>
+                <p>Nine months into her new life on Heron Island, Nell Whitaker finds a body in the tidal pools behind her caf&eacute;. Avery Cole was twenty-nine, engaged, and the loudest voice against a resort development threatening the island's protected marsh. Everyone has a theory. Most of them are wrong.</p>
+                <p>Nell was an investigative journalist in another life &mdash; before a story in Washington got a source killed and she ran south to a building on the corner of Front and Pelican that she turned into the Compass Rose. She was trying to disappear. Lantern Bay had other plans.</p>
+                <span class="status">Coming 2026</span>
+            </div>
         </div>
 
         <div class="book-card" style="margin-top:1.5rem;">
