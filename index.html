@@ -480,8 +480,13 @@
         <div class="signup-inner">
             <h2>Get the early word</h2>
             <p>Cover reveals, release dates, and occasional notes from the coast. Short emails, no spam, easy unsubscribe.</p>
-            <form class="signup-form" id="signupForm">
-                <input type="email" placeholder="Your email" required aria-label="Email address">
+            <form class="signup-form" id="signupForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="be976ab4-cbd1-458a-8477-b4e74b0d1432">
+                <input type="hidden" name="subject" value="Harper Callahan — New Newsletter Subscriber">
+                <input type="hidden" name="from_name" value="Harper Callahan Books">
+                <input type="hidden" name="redirect" value="https://harpercallahanbooks.com/?subscribed=1">
+                <input type="checkbox" name="botcheck" style="display:none">
+                <input type="email" name="email" placeholder="Your email" required aria-label="Email address">
                 <button type="submit">Subscribe</button>
             </form>
             <p class="signup-note">Your email stays private. Always.</p>
@@ -508,14 +513,20 @@
                 document.getElementById('navLinks').classList.remove('open');
             });
         }
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var btn = this.querySelector('button');
-            var input = this.querySelector('input');
-            btn.textContent = 'Got it!';
+        // Show thank-you after Web3Forms redirect
+        if (window.location.search.indexOf('subscribed=1') > -1) {
+            var form = document.getElementById('signupForm');
+            var btn = form.querySelector('button');
+            var input = form.querySelector('input[type="email"]');
+            btn.textContent = 'You\'re in!';
+            btn.style.background = '#4a6741';
+            btn.style.borderColor = '#4a6741';
             input.value = '';
-            setTimeout(function() { btn.textContent = 'Subscribe'; }, 2500);
-        });
+            input.placeholder = 'Subscribed — thank you!';
+            input.disabled = true;
+            btn.disabled = true;
+            history.replaceState(null, '', '/');
+        }
     </script>
 
 </body>
